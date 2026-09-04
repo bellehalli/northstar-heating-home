@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+<title id="title">Home comfort system</title><desc id="desc">Stylized residential HVAC equipment illustration.</desc>
+<rect width="800" height="600" fill="#F7F3EA"/>
+<rect x="0" y="420" width="800" height="180" fill="#DDE9EE"/>
+<g transform="translate(210 115)">
+  <rect x="0" y="75" width="300" height="315" rx="20" fill="#B9C7CD" stroke="#647985" stroke-width="10"/>
+  <rect x="32" y="105" width="236" height="210" rx="10" fill="#D9E1E4"/>
+  <circle cx="150" cy="210" r="92" fill="#8398A3"/>
+  <circle cx="150" cy="210" r="75" fill="#2E4552"/>
+  <g fill="#9FB1BA"><path d="M150 140q70 5 55 65-44-15-55-65z"/><path d="M220 210q-5 70-65 55 15-44 65-55z"/><path d="M150 280q-70-5-55-65 44 15 55 65z"/><path d="M80 210q5-70 65-55-15 44-65 55z"/></g>
+  <circle cx="150" cy="210" r="18" fill="#D99A3E"/>
+  <rect x="72" y="335" width="156" height="22" rx="8" fill="#647985"/>
+</g>
+</svg>
