@@ -8,8 +8,17 @@ if(toggle&&links){
   document.addEventListener('click',e=>{if(links.classList.contains('open')&&!links.contains(e.target)&&!toggle.contains(e.target))closeNav();});
 }
 
-const coreZips=new Set(['48150','48152','48154','48170','48187','48188','48167','48168','48374','48375','48377','48331','48334','48335','48336','48239','48135','48127','48075','48076']);
-const extendedZips=new Set(['48120','48124','48126','48128','48067','48073','48072','48009','48083','48084','48085','48098','48382','48390'48185', '48186','48240','48125','48033','48034']);
+const coreZips=new Set([
+  '48150','48152','48154','48170','48187','48188','48167','48168',
+  '48374','48375','48377','48331','48334','48335','48336',
+  '48239','48240','48135','48125','48127','48033','48034','48075','48076',
+  '48185','48186'
+]);
+const extendedZips=new Set([
+  '48120','48124','48126','48128','48067','48073','48072','48009',
+  '48083','48084','48085','48098','48382','48390'
+]);
+
 document.querySelectorAll('[data-zip-form]').forEach(form=>{
   form.addEventListener('submit',e=>{
     e.preventDefault();
@@ -20,7 +29,8 @@ document.querySelectorAll('[data-zip-form]').forEach(form=>{
     if(!/^\d{5}$/.test(zip)){status.textContent='Enter a 5-digit ZIP code.';status.style.color='#b83d3d';return;}
     if(coreZips.has(zip)){status.textContent='Yes — this ZIP is in Northstar’s sample core service area.';status.style.color='#356554';return;}
     if(extendedZips.has(zip)){status.textContent='This ZIP is in Northstar’s sample extended area. Availability would be confirmed when you request service.';status.style.color='#356554';return;}
-    status.textContent='This ZIP is outside the sample coverage list. Contact Northstar to check availability.';status.style.color='#647985';
+    status.textContent='This ZIP is outside the sample coverage list. Contact Northstar to check availability.';
+    status.style.color='#647985';
   });
 });
 
@@ -41,7 +51,11 @@ if(serviceForm){
     if(!serviceForm.reportValidity())return;
     const output=serviceForm.querySelector('[data-form-status]');
     const chosen=select?.options[select.selectedIndex]?.text||'service';
-    if(output){output.hidden=false;output.textContent=`Demo request ready for ${chosen}. In a real client deployment, this would now be sent to the approved inbox, booking platform or CRM.`;output.focus();}
+    if(output){
+      output.hidden=false;
+      output.textContent=`Demo request ready for ${chosen}. In a real client deployment, this would now be sent to the approved inbox, booking platform or CRM.`;
+      output.focus();
+    }
   });
 }
 
